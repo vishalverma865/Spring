@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- bean definitions here -->
+    <bean class = "co.pragra.learning.hellotospring.BMWM3" name = "object1">
+        <constructor-arg name="name" value="Ford Fusion"/>
+        <constructor-arg name="engine" ref="dieselEngine"/>
+        <constructor-arg name="features" >
+       <list>
+           <value>CLA250</value>
+            <value>Jaguar</value>
+            <value>chevy</value>
+            <value>Jeep</value>
+        </list>
+        </constructor-arg>
+        <constructor-arg name ="modelPricing">
+
+            <map>
+                <entry key="M1" value="60000.00"/>
+                <entry key="M2" value="70000.00"/>
+                <entry key="M3" value="#{T(java.lang.Math).random()}"/>
+            </map>
+
+        </constructor-arg>
+
+    </bean>
+
+    <bean class = "co.pragra.learning.hellotospring.BMWM3" name = "object2">
+        <constructor-arg name ="name" value="BMW"></constructor-arg>
+        <constructor-arg name ="engine" ref="dieselEngine" ></constructor-arg>
+
+        <constructor-arg name="features" >
+            <list>
+                <value>CLA250</value>
+                <value>Jaguar</value>
+                <value>chevy</value>
+                <value>Jeep</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg name ="modelPricing">
+
+            <map>
+                <entry key="M1" value="60000.00"></entry>
+                <entry key="M2" value="70000.00"></entry>
+                <entry key="M3" value="80000.00"></entry>
+            </map>
+
+        </constructor-arg>
+
+
+    </bean>
+    <bean class="co.pragra.learning.hellotospring.IEngine" name = "dieselEngine">
+
+        <constructor-arg name="engineType" value="Petrol"/>
+    </bean>
+
+
+</beans>
